@@ -115,4 +115,8 @@ class BlurViewModel(application: Application) : ViewModel() {
             throw IllegalArgumentException("Unable to construct viewmodel")
         }
     }
+
+    internal fun cancelWork() {
+        workManager.cancelUniqueWork(IMAGE_MANIPULATION_WORK_NAME)
+    }
 }
